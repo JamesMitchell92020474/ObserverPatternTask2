@@ -16,7 +16,7 @@ import java.util.Observer;
  * @date 25/09/2019
  */
 public class TicketSystem extends Observable{
- 
+    
     // set some backing fields
     private final ArrayList<Observer> observers;
     private int currentTicketNumber;
@@ -30,9 +30,14 @@ public class TicketSystem extends Observable{
     }
 
     public void callPatient() {
+
         setChanged();
         notifyObservers(this, currentTicketNumber);
         currentTicketNumber ++;
+    }
+    
+    public void decrementTicketNumber(){
+        currentTicketNumber--;
     }
 
     public void notifyObservers(Observable observable, Object currentNumber) {
