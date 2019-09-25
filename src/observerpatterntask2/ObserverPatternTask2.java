@@ -17,7 +17,20 @@ public class ObserverPatternTask2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        TicketSystem ticketSystem = new TicketSystem();
+        
+        // register the observers 
+        ticketSystem.registerObserver(new Patient(231));
+        ticketSystem.registerObserver(new Patient(232));
+        ticketSystem.registerObserver(new Patient(233));
+        ticketSystem.registerObserver(new Patient(234));
+        ticketSystem.registerObserver(new Patient(235));
+        
+        //callPatient() should issue notification.
+        ticketSystem.callPatient();
+        ticketSystem.callPatient();
+        
     }
     
 }
