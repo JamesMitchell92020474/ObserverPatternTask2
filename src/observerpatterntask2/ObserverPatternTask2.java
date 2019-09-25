@@ -27,8 +27,15 @@ public class ObserverPatternTask2 {
         ticketSystem.registerObserver(new Patient(234));
         ticketSystem.registerObserver(new Patient(235));
         
+        // register priority case
+        PriorityCase priorityCase = new PriorityCase();
+        ticketSystem.registerObserver(priorityCase);       
+        
         //callPatient() should issue notification.
         ticketSystem.callPatient();
+        
+        ticketSystem.removeObserver(priorityCase);
+        
         ticketSystem.callPatient();
         
     }
